@@ -1,0 +1,17 @@
+<html>
+<head>
+  <title>Form!</title>
+</head>
+<body>
+  <h1>
+    FORM HERE!
+  </h1>
+  <form method="POST" action="{{ url_for('form') }}">
+    {{ form.csrf_token }}
+    {{ form.recency }}
+    {{ form.frequency }}
+    {{ form.time }}
+    {{ form.monetary }}
+  </form>
+</body>
+</html>

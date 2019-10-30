@@ -13,9 +13,16 @@ import json
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'ML'
 
+class LoginForm(FlaskForm):
+    Recency = FloatField('recency')
+    Frequency = FloatField('frequency')
+    Time = FloatField('time')
+    Monetary = FloatField('monetary')
+
 @app.route('/form')
-def route():
-    return render_template('index.html')
+def form():
+    form = LoginForm()
+    return render_template('form.html', form=form)
 
 # POST Method Calculation predict data from the data input.
 @app.route('/api/', methods=['POST'])
