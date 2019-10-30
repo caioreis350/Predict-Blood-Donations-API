@@ -27,3 +27,15 @@ headers = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8'}
 r = requests.post(url, data=j_data, headers=headers)
 # Showing the Request Response.
 print(r, r.text)
+
+""" How to show the result of the predictions.
+@app.route('/')
+def root():
+    url = 'http://10.1.3.214:5000/api/'
+    data = [[2, 5, 16, 7.130899]]
+    j_data = json.dumps(data)
+    headers = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8'}
+    r = requests.post(url, data=j_data, headers=headers)
+
+    return r.text # The prediction.
+"""
