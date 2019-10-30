@@ -19,7 +19,7 @@ class LoginForm(FlaskForm):
     Time = FloatField('time')
     Monetary = FloatField('monetary')
 
-@app.route('/form')
+@app.route('/form', methods=["GET", "POST"])
 def form():
     form = LoginForm()
     return render_template('form.html', form=form)
