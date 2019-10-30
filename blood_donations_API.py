@@ -22,6 +22,9 @@ class LoginForm(FlaskForm):
 @app.route('/form', methods=["GET", "POST"])
 def form():
     form = LoginForm()
+    
+    if form.validate_on_submit():
+        return f"<h1>The data provided is {form.Recency.data}, {form.Frequency.data}, {form.Time.data}, {form.Monetary.data}<h1>"
     return render_template('form.html', form=form)
 
 # POST Method Calculation predict data from the data input.
