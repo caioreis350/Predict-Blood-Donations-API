@@ -8,10 +8,15 @@
   </h1>
   <form method="POST" action="{{ url_for('form') }}">
     {{ form.csrf_token }}
-    {{ form.recency }}
-    {{ form.frequency }}
-    {{ form.time }}
-    {{ form.monetary }}
+    {{ form.Recency.label }}
+    {{ form.Recency }}
+    {{ form.Frequency.label }}
+    {{ form.Frecency }}
+    {{ form.Time.label }}
+    {{ form.Time }}
+    {{ form.Monetary.label }}
+    {{ form.Monetary }}
+    <input type="submit" value="Submit">
   </form>
 </body>
 </html>
