@@ -16,8 +16,8 @@ import json
 # Post Request on an API hosted on my local machine.
 url = 'http://10.1.3.214:5000/api/'
 
-# Individual that will be predicted upon.
-data = [[2, 15, 30, 90.134544]]
+# Individual that will be predicted upon. And the columns of the list are: Recency, Frequency, Monetary Value.
+data = [[2, 5, 16, 7.130899]]
 
 # Converting to json.
 j_data = json.dumps(data)
