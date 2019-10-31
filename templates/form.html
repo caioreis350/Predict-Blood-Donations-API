@@ -11,28 +11,28 @@
     {{ form.Recency.label }}
     {{ form.Recency }}
     <ul>
-      {% for error in form.Recency.erros %}
+      {% for error in form.Recency.errors %}
         <li style="color:red";>{{ error }}</li>
       {% endfor %}
     </ul>  
     {{ form.Frequency.label }}
     {{ form.Frequency }}
     <ul>
-        {% for error in form.Frequency.erros %}
+        {% for error in form.Frequency.errors %}
           <li style="color:red";>{{ error }}</li>        
         {% endfor %}
       </ul>  
     {{ form.Time.label }}
     {{ form.Time }}
     <ul>
-        {% for error in form.Time.erros %}
+        {% for error in form.Time.errors %}
           <li style="color:red";>{{ error }}</li>           
         {% endfor %}
       </ul>  
     {{ form.Monetary.label }}
     {{ form.Monetary }}
     <ul>
-        {% for error in form.Monetary.erros %}
+        {% for error in form.Monetary.errors %}
           <li style="color:red";>{{ error }}</li>   
         {% endfor %}
       </ul>  
