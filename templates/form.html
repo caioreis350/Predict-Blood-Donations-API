@@ -5,17 +5,13 @@
 Blood Donation Predictor
 {% endblock %}
 
-{% block styles%}
-{{super()}}
-<link rel="stylesheet" href="{{url_for('.static', filename='form.css')}}">
-{% endblock %}
-
-
 {% block content %}
 <div class="container">
   <form method="POST" action="{{ url_for('form') }}">
+    <dl>
     {{ wtf.quick_form(form)}}
-  <input class="btn btn-primary btn-lg" type="submit" value="Predict">
+    <input class="btn btn-primary btn-lg" type="submit" value="Predict">
+    </dl>
   </form>
 </div>
 {% endblock %}
