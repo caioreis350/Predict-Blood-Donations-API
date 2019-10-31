@@ -12,30 +12,30 @@
     {{ form.Recency }}
     <ul>
       {% for error in form.Recency.errors %}
-        <li style="color:red";>{{ error }}</li>
+          <li style="color:red;">{{ error }}</li>
       {% endfor %}
     </ul>  
     {{ form.Frequency.label }}
     {{ form.Frequency }}
     <ul>
         {% for error in form.Frequency.errors %}
-          <li style="color:red";>{{ error }}</li>        
+            <li style="color:red;">{{ error }}</li>        
         {% endfor %}
       </ul>  
     {{ form.Time.label }}
     {{ form.Time }}
     <ul>
         {% for error in form.Time.errors %}
-          <li style="color:red";>{{ error }}</li>           
+            <li style="color:red;">{{ error }}</li>           
         {% endfor %}
-      </ul>  
+    </ul>  
     {{ form.Monetary.label }}
     {{ form.Monetary }}
     <ul>
         {% for error in form.Monetary.errors %}
-          <li style="color:red";>{{ error }}</li>   
+            <li style="color:red;">{{ error }}</li>   
         {% endfor %}
-      </ul>  
+    </ul>  
     <input type="submit" value="Submit">
   </form>
 </body>
