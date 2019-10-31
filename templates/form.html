@@ -10,12 +10,28 @@
     {{ form.csrf_token }}
     {{ form.Recency.label }}
     {{ form.Recency }}
+    <ul>
+      {% for error in form.Recency.erros %}
+      {% endfor %}
+    </ul>  
     {{ form.Frequency.label }}
     {{ form.Frequency }}
+    <ul>
+        {% for error in form.Frequency.erros %}
+        {% endfor %}
+      </ul>  
     {{ form.Time.label }}
     {{ form.Time }}
+    <ul>
+        {% for error in form.Time.erros %}
+        {% endfor %}
+      </ul>  
     {{ form.Monetary.label }}
     {{ form.Monetary }}
+    <ul>
+        {% for error in form.Monetary.erros %}
+        {% endfor %}
+      </ul>  
     <input type="submit" value="Submit">
   </form>
 </body>

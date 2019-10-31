@@ -4,6 +4,7 @@
 from flask import Flask, request, redirect, url_for, flash, jsonify, render_template
 from flask_wtf import FlaskForm
 from wtforms import Form, BooleanField, StringField, FloatField, validators
+from wtforms.validators import InputRequired
 from flask_wtf import Form
 import numpy as np
 import pickle as p
@@ -14,10 +15,21 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'ML'
 
 class LoginForm(FlaskForm):
-    Recency = FloatField('recency')
-    Frequency = FloatField('frequency')
-    Time = FloatField('time')
-    Monetary = FloatField('monetary')
+    Recency = FloatField('recency', 
+                            validators=[InputRequired(), 
+                            validators.NumberRange(min=0, max=100)])
+
+    Frequency = FloatField('frequency', 
+                                validators=[InputRequired(), 
+                                validators.NumberRange(min=0, max=500)])
+
+    Time = FloatField('time', 
+                        validators=[InputRequired(), 
+                        validators.NumberRange(min=0, max=500)])
+
+    Monetary = FloatField('monetary', 
+                            validators=[InputRequired(), 
+                            validators.NumberRange(min=0, max=1000)])
 
 @app.route('/form', methods=["GET", "POST"])
 def form():
