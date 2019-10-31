@@ -6,7 +6,8 @@
   <h1>
     FORM HERE!
   </h1>
-  <form method="POST" action="{{ url_for('form') }}">
+  <table>
+  <th><form method="POST" action="{{ url_for('form') }}">
     {{ form.csrf_token }}
     {{ form.Recency.label }}
     {{ form.Recency }}
@@ -37,6 +38,9 @@
         {% endfor %}
     </ul>  
     <input type="submit" value="Submit">
-  </form>
+  </form></th>
+  <th>
+    <h1>PREDICTION RESPONSE!!</h1>
+  </th>
 </body>
 </html>
