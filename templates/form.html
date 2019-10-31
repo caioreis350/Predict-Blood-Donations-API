@@ -1,46 +1,21 @@
-<html>
-<head>
-  <title>Form!</title>
-</head>
-<body>
-  <h1>
-    FORM HERE!
-  </h1>
-  <table>
-  <th><form method="POST" action="{{ url_for('form') }}">
-    {{ form.csrf_token }}
-    {{ form.Recency.label }}
-    {{ form.Recency }}
-    <ul>
-      {% for error in form.Recency.errors %}
-          <li style="color:red;">{{ error }}</li>
-      {% endfor %}
-    </ul>  
-    {{ form.Frequency.label }}
-    {{ form.Frequency }}
-    <ul>
-        {% for error in form.Frequency.errors %}
-            <li style="color:red;">{{ error }}</li>        
-        {% endfor %}
-      </ul>  
-    {{ form.Time.label }}
-    {{ form.Time }}
-    <ul>
-        {% for error in form.Time.errors %}
-            <li style="color:red;">{{ error }}</li>           
-        {% endfor %}
-    </ul>  
-    {{ form.Monetary.label }}
-    {{ form.Monetary }}
-    <ul>
-        {% for error in form.Monetary.errors %}
-            <li style="color:red;">{{ error }}</li>   
-        {% endfor %}
-    </ul>  
-    <input type="submit" value="Submit">
-  </form></th>
-  <th>
-    <h1>PREDICTION RESPONSE!!</h1>
-  </th>
-</body>
-</html>
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title%}
+Blood Donation Predictor
+{% endblock %}
+
+{% block styles%}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('.static', filename='form.css')}}">
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+  <form method="POST" action="{{ url_for('form') }}">
+    {{ wtf.quick_form(form)}}
+  <input class="btn btn-primary btn-lg" type="submit" value="Predict">
+  </form>
+</div>
+{% endblock %}

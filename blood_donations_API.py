@@ -3,6 +3,7 @@
 # Imports
 from flask import Flask, request, redirect, url_for, flash, jsonify, render_template
 from flask_wtf import FlaskForm
+from flask_bootstrap import Bootstrap
 from wtforms import Form, BooleanField, StringField, FloatField, validators
 from wtforms.validators import InputRequired, NumberRange
 from flask_wtf import Form
@@ -13,6 +14,7 @@ import json
 
 # App config.
 app = Flask(__name__)
+Bootstrap(app)
 app.config['SECRET_KEY'] = 'ML'
 
 

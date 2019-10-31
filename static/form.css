@@ -1,0 +1,4 @@
+body {
+    background-color: red; /* For browsers that do not support gradients */
+    background-image: linear-gradient(Turquoise, DeepSkyBlue); /* Standard syntax (must be last) */
+}
