@@ -15,25 +15,25 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'ML'
 
 class LoginForm(FlaskForm):
-    Recency = FloatField('recency', 
+    Recency = FloatField('Recency', 
                             validators=[InputRequired(), 
-                            NumberRange(min=0, max=100)],
-                            message="Recency must be between 0 and 500")
+                            NumberRange(min=0, max=100,
+                                        message="Recency must be between 0 and 500")])
 
-    Frequency = FloatField('frequency', 
+    Frequency = FloatField('Frequency', 
                                 validators=[InputRequired(), 
-                                NumberRange(min=0, max=500)],
-                                message="Frequency must be between 0 and 500")
+                                NumberRange(min=0, max=500,
+                                            message="Frequency must be between 0 and 500")])
 
-    Time = FloatField('time', 
+    Time = FloatField('Time', 
                         validators=[InputRequired(), 
-                        NumberRange(min=0, max=500)],
-                        message="Time since last donation must be between 0 and 500")
+                        NumberRange(min=0, max=500,
+                                    message="Time since last donation must be between 0 and 500")])
 
-    Monetary = FloatField('monetary', 
+    Monetary = FloatField('Blood Donated', 
                             validators=[InputRequired(), 
-                            NumberRange(min=0, max=1000)],
-                            message="Monetary must be between 0 and 500")
+                            NumberRange(min=0, max=1000,
+                                        message="Monetary must be between 0 and 500")])
 
 @app.route('/form', methods=["GET", "POST"])
 def form():
