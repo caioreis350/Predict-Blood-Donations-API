@@ -55,7 +55,7 @@ def prediction_response(Recency, Frequency, Time, Monetary):
     data = [[2	5	16	7.130899]] -> [0]   
 """
 
-@app.route('/form', methods=["GET", "POST"])
+@app.route('/', methods=["GET", "POST"])
 def form():
     form = LoginForm()
     
