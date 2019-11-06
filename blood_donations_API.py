@@ -55,16 +55,12 @@ def prediction_response(Recency, Frequency, Time, Monetary):
     data = [[2	5	16	7.130899]] -> [0]   
 """
 
-@app.route('/', methods=["GET", "POST"])
+@app.route('/form', methods=["GET", "POST"])
 def form():
     form = LoginForm()
     
     if form.validate_on_submit():
-        return f"""<h1>The Prediction is {prediction_response(form.Recency.data,
-                                                              form.Frequency.data,
-                                                              form.Time.data,
-                                                              form.Monetary.data)}
-                                                              Donation on next Campaign<h1>"""
+        return f"""AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"""
     return render_template('form.html', form=form)
 
 # POST Method Calculation predict data from the data input.
