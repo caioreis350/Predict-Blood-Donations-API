@@ -35,7 +35,7 @@ class LoginForm(FlaskForm):
                         NumberRange(min=0, max=500,
                                     message="Time since first donation must be between 0 and 500")])
 
-    Monetary = FloatField('Blood Donated - Ammount of total Blood donated (Liters)', 
+    Monetary = FloatField('Blood Donated - Ammount of total Blood donated (Cubic Centimeters C.C)', 
                             validators=[InputRequired(), 
                             NumberRange(min=0, max=1000,
                                         message="Blood donated must be between 0 and 500")])
