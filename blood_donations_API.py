@@ -14,7 +14,7 @@ import json
 
 # App config.
 app = Flask(__name__)
-Bootstrap(app)k
+Bootstrap(app)
 app.config['SECRET_KEY'] = 'ML'
 
 
