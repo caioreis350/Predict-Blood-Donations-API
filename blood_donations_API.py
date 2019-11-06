@@ -14,31 +14,31 @@ import json
 
 # App config.
 app = Flask(__name__)
-Bootstrap(app)
+Bootstrap(app)k
 app.config['SECRET_KEY'] = 'ML'
 
 
 # Form inputs
 class LoginForm(FlaskForm):
-    Recency = FloatField('Recency', 
+    Recency = FloatField('Recency - Time since last donation (Months)', 
                             validators=[InputRequired(), 
                             NumberRange(min=0, max=100,
                                         message="Time since last donation must be between 0 and 500")])
 
-    Frequency = FloatField('Frequency', 
+    Frequency = FloatField('Frequency - Frequency of Donations (Months)', 
                                 validators=[InputRequired(), 
                                 NumberRange(min=0, max=500,
                                             message="Frequency must be between 0 and 500")])
 
-    Time = FloatField('Time', 
+    Time = FloatField('Time - Time since first donation (Months)', 
                         validators=[InputRequired(), 
                         NumberRange(min=0, max=500,
                                     message="Time since first donation must be between 0 and 500")])
 
-    Monetary = FloatField('Blood Donated', 
+    Monetary = FloatField('Blood Donated - Ammount of total Blood donated (Liters)', 
                             validators=[InputRequired(), 
                             NumberRange(min=0, max=1000,
-                                        message="Monetary must be between 0 and 500")])
+                                        message="Blood donated must be between 0 and 500")])
 
 # Prediction Response
 def prediction_response(Recency, Frequency, Time, Monetary):
